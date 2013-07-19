@@ -13,43 +13,14 @@ body {
 	text-decoration: none;
 }
 /*-----------------header end-----------------*/
-/*-----------------photoviewer start-----------------*/
-.photoviewer {
-	position: relative;
-	width: 100%;
-	min-height: 500px;
-	line-height: 475px;
+/*-----------------choose user start-----------------*/
+.user-name {
+	font-size: 24px;
 	text-align: center;
-}
-.pre {
-	width: 50%;
-	height: 100%;
-	position: absolute;
+	font-weight: 700;
+	text-decoration: none;
 	cursor: pointer;
-	background: url("../img/arrow-blue-left.png") no-repeat left center;
-}
-.next {
-	width: 50%;
-	height: 100%;
-	position: absolute;
-	cursor: pointer;
-	background: url("../img/arrow-blue-right.png") no-repeat right center;
-	left: 50%;
-}
-.no-pre {
-	width: 50%;
-	height: 100%;
-	position: absolute;
-	background: url("../img/arrow-gray-left.png") no-repeat left center;
-}
-.no-next {
-	width: 50%;
-	height: 100%;
-	position: absolute;
-	background: url("../img/arrow-gray-right.png") no-repeat right center;
-	left: 50%;
-}
-.exifInfo {
-	color: #27AE60;
+	height: 36px;
+	line-height: 36px;
 }
 /*-----------------photoviewer end-----------------*/
