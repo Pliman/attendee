@@ -1,0 +1,55 @@
+/*-----------------global start-----------------*/
+body {
+	font-family: "georgia","Lato", sans-serif;
+	font-size: 15px;
+}
+
+.navbar .nav > li > a {
+	font-size: 17px;
+}
+/*-----------------global end-----------------*/
+/*-----------------header start-----------------*/
+.navbar .siteTitle {
+	text-decoration: none;
+}
+/*-----------------header end-----------------*/
+/*-----------------photoviewer start-----------------*/
+.photoviewer {
+	position: relative;
+	width: 100%;
+	min-height: 500px;
+	line-height: 475px;
+	text-align: center;
+}
+.pre {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+	background: url("../img/arrow-blue-left.png") no-repeat left center;
+}
+.next {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+	background: url("../img/arrow-blue-right.png") no-repeat right center;
+	left: 50%;
+}
+.no-pre {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	background: url("../img/arrow-gray-left.png") no-repeat left center;
+}
+.no-next {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	background: url("../img/arrow-gray-right.png") no-repeat right center;
+	left: 50%;
+}
+.exifInfo {
+	color: #27AE60;
+}
+/*-----------------photoviewer end-----------------*/

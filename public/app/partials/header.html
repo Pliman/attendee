@@ -1,0 +1,16 @@
+<div class="navbar">
+	<div class="navbar-inner palette-silver">
+		<a class="brand siteTitle" href="/">Photo Gallery</a>
+		<ul class="nav">
+			<li ng-class="{active: currentAlbum == 'all'}"><a
+					href="/">ALL</a></li>
+
+			<li ng-repeat="album in albums" ng-class="{active: currentAlbum == album.name}"
+			    id="{{album.name}}">
+				<a href="#" ng-click="navAlbum(album.name)"
+				   title="{{currentAlbum}}">{{album
+					.name}}</a>
+			</li>
+		</ul>
+	</div>
+</div>

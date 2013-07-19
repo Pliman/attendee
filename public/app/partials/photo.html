@@ -1,0 +1,25 @@
+<div id="msger"></div>
+<div class="photoviewer">
+	<div id="pre" class="pre" ng-click="photoPre()"></div>
+	<div id="next" class="next" ng-click="photoNext()"></div>
+	<span class="shower" ng-switch="photo.name != null">
+		<img ng-switch-when="true"
+		     ng-src="/uploads/{{photo.albumName}}/{{photo.name}}">
+		<!-- show spinner when loading-->
+		<img ng-switch-when="false" src="/app/img/loding_green.gif">
+	</span>
+</div>
+
+<!--
+<div class="row-fluid" ui-view="exif"></div>
+-->
+
+<div class="row-fluid">
+	<div class="span12 palette-clouds">
+		<ul class="thumbnails exifInfo">
+			<li class="" ng-repeat="item in exifItems">
+				{{item.display}}: {{photo[item.property]}}
+			</li>
+		</ul>
+	</div>
+</div>
