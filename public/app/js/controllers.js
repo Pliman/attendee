@@ -12,15 +12,8 @@ define(['jQuery', 'angular', 'popMsger', 'angularUiRouter', './services'], funct
 				$state.transitionTo('vote', {userName: userName});
 			};
 		}])
-		.controller('vote', ['$scope', '$state', '$stateParams', 'users', 'menu', function ($scope, $state, $stateParams, AlbumPhotos, menu) {
-			menu.changeMenu($stateParams.albumName);
-
-			AlbumPhotos.get({albumName: $stateParams.albumName}, function (photos) {
-				$scope.photos = photos;
-			});
-
-			$scope.navPhoto = function (photoName) {
-				$state.transitionTo('albumPhoto', {photoName: photoName});
-			};
+		.controller('vote', ['$scope', '$state', '$stateParams', 'users', function ($scope, $state, $stateParams, users) {
+			console.log($stateParams.userName);
+			$scope.userName = $stateParams.userName;
 		}])
 });
