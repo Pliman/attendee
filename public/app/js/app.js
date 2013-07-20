@@ -1,8 +1,8 @@
 'use strict';
 
-require(['jQuery', 'angular', 'bootstrap', 'angularUiRouter', 'js/controllers'], function ($, angular) {
+require(['jQuery', 'angular', 'bootstrap', 'angularUiRouter', 'js/controllers', 'flatuiCheckbox', 'flatuiRadio'], function ($, angular) {
 	// Declare app level module which depends on filters, and services
-	angular.module('attendee', ['ui.state', 'photo-gallery.controllers']).
+	angular.module('attendee', ['ui.state', 'attendee.controllers']).
 		config(['$routeProvider', '$locationProvider', '$stateProvider', function ($routeProvider, $locationProvider, $stateProvider) {
 			$stateProvider
 				.state('index', {

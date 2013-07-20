@@ -7,6 +7,8 @@ var require = {
 		bootstrap: 'lib/bootstrap/bootstrap',
 		angularUiRouter: 'lib/angular/angular-ui-router',
 		underscore: 'lib/underscore/underscore',
+		flatuiCheckbox: 'lib/flat-ui/flatui-checkbox',
+		flatuiRadio: 'lib/flat-ui/flatui-radio',
 		popMsger: 'js/widgets/pop-msger'
 	},
 	shim: {
@@ -27,6 +29,12 @@ var require = {
 		},
 		angularResource: {
 			deps: ['angular']
+		},
+		flatuiCheckbox: {
+			deps: ['bootstrap']
+		},
+		flatuiRadio: {
+			deps: ['bootstrap']
 		},
 		popMsger: {
 			deps: ['jQuery', 'bootstrap']

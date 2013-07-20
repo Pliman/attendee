@@ -12,7 +12,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
+//app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -29,5 +29,5 @@ var dispatcher = require("./dispatcher");
 dispatcher.dispatch(app);
 
 http.createServer(app).listen(process.env.PORT || 3000, function() {
-	console.log("Photo gallery listening on port %d in %s mode", process.env.PORT || 3000, app.settings.env);
+	console.log("attendee listening on port %d in %s mode", process.env.PORT || 3000, app.settings.env);
 });

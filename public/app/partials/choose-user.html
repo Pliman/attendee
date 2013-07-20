@@ -1,10 +1,10 @@
 <div class="alert alert-info">
-	请选择您得尊姓大名，如果没得自己的名字，说明你眼睛睁得不够大，如果找了半天都找不到，请联系 Pliman
+	请选择您得尊姓大名，如果没看到自己的名字，你再仔细找找... ...
 </div>
 <ul class="thumbnails">
-	<li class="span6" ng-repeat="user in users">
+	<li class="span3" ng-repeat="user in users">
 		<a class="thumbnail user-name"
-		   ng-click="loginWithUser(user.name)">
+		   ng-click="loginWithUser(user.nickName || user.name)">
 			{{user.name}}
 		</a>
 	</li>

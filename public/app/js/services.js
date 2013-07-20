@@ -2,7 +2,7 @@
 
 /* Services */
 define(['angular', 'angularResource'], function (angular) {
-	angular.module('photo-gallery.services', ['ngResource'])
+	angular.module('attendee.services', ['ngResource'])
 		.factory('users', ['$resource', function ($resource) {
 			return $resource('/users', {}, {
 				get: {method: 'GET', isArray: true}
@@ -14,4 +14,13 @@ define(['angular', 'angularResource'], function (angular) {
 				save: {method: 'POST', isArray: false}
 			});
 		}])
+		.value('weekdays', [
+			{"name": "monday", "chinese": "星期一"},
+			{"name": "tuesday", "chinese": "星期二"},
+			{"name": "wednesday", "chinese": "星期三"},
+			{"name": "thursday", "chinese": "星期四"},
+			{"name": "friday", "chinese": "星期五"},
+			{"name": "saturday", "chinese": "星期六"},
+			{"name": "sunday", "chinese": "星期天"}
+		]);
 });

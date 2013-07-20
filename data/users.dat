@@ -1,19 +1,19 @@
-{ "name" : "陈小军"}
-{ "name" : "陈晓磊"}
-{ "name" : "傅杰"}
-{ "name" : "雷莹"}
-{ "name" : "李广兴"}
-{ "name" : "李伟"}
-{ "name" : "钱灿"}
-{ "name" : "罗兵"}
-{ "name" : "孙彬"}
-{ "name" : "唐海迪"}
-{ "name" : "肖悦天"}
-{ "name" : "杨凡"}
-{ "name" : "杨广为"}
-{ "name" : "杨宗德"}
-{ "name" : "游晟"}
-{ "name" : "余国家"}
-{ "name" : "曾涛"}
-{ "name" : "张坪"}
-{ "name" : "张毅"}
+{ "name" : "陈小军", "nickName" : "小军"}
+{ "name" : "陈晓磊", "nickName" : "晓磊"}
+{ "name" : "傅杰", "nickName" : "傅杰"}
+{ "name" : "雷莹", "nickName" : "雷妹儿"}
+{ "name" : "李广兴", "nickName" : "广兴"}
+{ "name" : "李伟", "nickName" : "李伟"}
+{ "name" : "钱灿", "nickName" : "钱总"}
+{ "name" : "罗兵", "nickName" : "罗总"}
+{ "name" : "孙彬", "nickName" : "孙彬"}
+{ "name" : "唐海迪", "nickName" : "海迪"}
+{ "name" : "肖悦天", "nickName" : "肖总"}
+{ "name" : "杨凡", "nickName" : "杨总"}
+{ "name" : "杨广为", "nickName" : "广为"}
+{ "name" : "杨宗德", "nickName" : "杨老师"}
+{ "name" : "游晟", "nickName" : "游老板"}
+{ "name" : "余国家", "nickName" : "余国家"}
+{ "name" : "曾涛", "nickName" : "涛哥"}
+{ "name" : "张坪", "nickName" : "张坪"}
+{ "name" : "张毅", "nickName" : "张毅"}
