@@ -21,10 +21,10 @@
 							class="ui"></span>我开勒个车</label>
 				</div>
 
-				<div class="span7"
-				     ng-repeat="car in weekdaysStatistic[weekday.name].cars">
-					<div id="{{weekday.name}}Car"
-					     class="tagsinput getInCar row-fluid">
+				<div class="span7">
+					<div ng-repeat="car in weekdaysStatistic[weekday.name].cars"
+							id="{{weekday.name}}Car"
+							class="tagsinput getInCar row-fluid">
 						<div class="span4 operater">
 							<span class="tag">{{car.driver}}</span>
 							<a class="btn btn-primary">搭车</a>
