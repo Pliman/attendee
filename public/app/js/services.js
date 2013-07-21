@@ -8,7 +8,7 @@ define(['angular', 'angularResource'], function (angular) {
 				get: {method: 'GET', isArray: true}
 			});
 		}])
-		.factory('user-days', ['$resource', function ($resource) {
+		.factory('userDays', ['$resource', function ($resource) {
 			return $resource('/user-days', {}, {
 				get: {method: 'GET', isArray: true},
 				save: {method: 'POST', isArray: false}
@@ -22,5 +22,14 @@ define(['angular', 'angularResource'], function (angular) {
 			{"name": "friday", "chinese": "星期五"},
 			{"name": "saturday", "chinese": "星期六"},
 			{"name": "sunday", "chinese": "星期天"}
-		]);
+		])
+		.value('weekdaysStatistic', {
+			"monday": {"attendees": [], "cars": []},
+			"tuesday": {"attendees": [], "cars": []},
+			"wednesday": {"attendees": [], "cars": []},
+			"thursday": {"attendees": [], "cars": []},
+			"friday": {"attendees": [], "cars": []},
+			"saturday": {"attendees": [], "cars": []},
+			"sunday": {"attendees": [], "cars": []}
+		});
 });

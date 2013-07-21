@@ -1,2 +1,2 @@
-{ "name" : "陈小军", "available" : "monday,friday", "car" : "friday", "takeCar" : {"肖悦天" : "monday", "陈小军" : "friday"}}
-{ "name" : "陈晓磊", "available" : "tuesday,wednesday", "car" : "wednesday", "takeCar" : {"肖悦天" : "tuesday", "陈晓磊" : "wednesday"}}
+{ "name" : "陈小军", "available" : ["monday","friday"],"cars" : [{"day":"monday", "passengers":["杨宗德","肖悦天"]}, {"day":"friday","passengers":["肖悦天"]}]}
+{ "name" : "陈晓磊", "available" : ["tuesday","wednesday"],"cars" : [{"day":"wednesday", "passengers":["杨凡"]}]}

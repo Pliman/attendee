@@ -21,7 +21,7 @@ require(['jQuery', 'angular', 'bootstrap', 'angularUiRouter', 'js/controllers', 
 					}
 				})
 				.state('vote', {
-					url: "/vote/:userName",
+					url: "/vote",
 					views: {
 						"header": {
 							templateUrl: "/app/partials/header.html"

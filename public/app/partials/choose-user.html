@@ -4,7 +4,7 @@
 <ul class="thumbnails">
 	<li class="span3" ng-repeat="user in users">
 		<a class="thumbnail user-name"
-		   ng-click="loginWithUser(user.nickName || user.name)">
+		   ng-click="loginWithUser(user.name, user.nickName)">
 			{{user.name}}
 		</a>
 	</li>

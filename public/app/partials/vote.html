@@ -3,33 +3,36 @@
 	<form>
 		<fieldset class="voter">
 			<div class="alert alert-success greeting">{{nickName||userName
-				}} ，打球去？</div>
+				}} ，打球去？
+			</div>
 
 			<div ng-repeat="weekday in weekdays"
 			     class="row-fluid day {{weekday.name}} clearfix">
 				<div class="span2 title">{{weekday.chinese}}</div>
 				<div class="span3">
-					<input type="checkbox" id="{{weekday.name}}Go"/><label
+					<input type="checkbox" id="{{weekday.name}}Go"
+					       ng-checked="currentUserAttend[weekday.name]"/><label
 						for="{{weekday.name}}Go" class="chooser"><span
 						class="ui"></span>我勒个去</label>
-					<input type="checkbox" id="{{weekday.name}}GotCar"/><label
-						for="{{weekday.name}}GotCar" class="chooser"
-						ng-click="gotCar(weekday.name)"><span
-						class="ui"></span>我开勒个车</label>
+					<input type="checkbox" id="{{weekday.name}}GotCar"
+					       ng-checked="currentUserCar[weekday.name]"/>
+					<label for="{{weekday.name}}GotCar" class="chooser"
+					       ng-click="gotCar(weekday.name)"><span
+							class="ui"></span>我开勒个车</label>
 				</div>
 
-				<div class="span7">
-					<div id="{{weekday.name}}Car" class="tagsinput getInCar row-fluid">
+				<div class="span7"
+				     ng-repeat="car in weekdaysStatistic[weekday.name].cars">
+					<div id="{{weekday.name}}Car"
+					     class="tagsinput getInCar row-fluid">
 						<div class="span4 operater">
-							<span class="tag">侯晓玲</span>
+							<span class="tag">{{car.driver}}</span>
 							<a class="btn btn-primary">搭车</a>
 							<a class="btn btn-info">下车</a>
 						</div>
 						<div class="span8 passenger">
-							<span class="tag">侯晓玲</span>
-							<span class="tag">侯晓玲</span>
-							<span class="tag">孙彬</span>
-							<span class="tag">侯晓玲</span>
+							<span class="tag"
+							      ng-repeat="passenger in car.passengers">{{passenger}}</span>
 						</div>
 					</div>
 				</div>
