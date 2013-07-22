@@ -23,6 +23,9 @@
 				</div>
 
 				<div class="span7">
+					<div id="{{weekday.name}}Attendees"
+					     class="tagsinput attendee">{{weekdaysStatistic[weekday.name].attendees.join(",")}}</div>
+
 					<div ng-repeat="car in weekdaysStatistic[weekday.name].cars"
 							id="{{weekday.name}}Car"
 							class="tagsinput getInCar row-fluid">

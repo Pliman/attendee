@@ -10,7 +10,7 @@ var require = {
 		flatuiCheckbox: 'lib/flat-ui/flatui-checkbox',
 		flatuiRadio: 'lib/flat-ui/flatui-radio',
 		popMsger: 'js/widgets/pop-msger',
-		dialog: 'js/widgets/Dialog'
+		Dialog: 'js/widgets/dialog'
 	},
 	shim: {
 		bootstrap: {
@@ -40,7 +40,7 @@ var require = {
 		popMsger: {
 			deps: ['jQuery', 'bootstrap']
 		},
-		dialog: {
+		Dialog: {
 			deps: ['jQuery', 'bootstrap']
 		}
 	}
