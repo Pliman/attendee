@@ -1,4 +1,4 @@
-{ "name" : "陈小军", "available" : ["monday","friday"],"cars" : [{"day":"monday", "passengers":["杨宗德","肖悦天"]}, {"day":"friday","passengers":["肖悦天"]}]}
+{ "name" : "陈小军", "available" : ["monday","tuesday"],"cars" : [{"day":"monday", "passengers":[]}, {"day":"tuesday","passengers":["陈晓磊","肖悦天"]}]}
 { "name" : "陈晓磊", "available" : ["tuesday","wednesday"],"cars" : [{"day":"wednesday", "passengers":["杨凡"]}]}
 { "name" : "唐海迪", "available" : ["tuesday","wednesday"],"cars" : [{"day":"wednesday", "passengers":["杨广为","杨宗德"]}]}
 { "name" : "肖悦天", "available" : ["tuesday","wednesday"],"cars" : []}

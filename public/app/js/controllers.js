@@ -38,14 +38,16 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 					$scope.currentUserDay.available.push(day);
 				};
 
-				var saveUserDay = function (userDay) {
+				var saveUserDay = function (userDay, type, callback) {
 					userDays.save({"userDays": userDay}, function (rtn) {
 						if (rtn.result === 'SUCCESS') {
 							popMsger.setupPopMsger(new popMsger(rtn.msg, "success", 5000), $('#msger'),
-								"addDaySaveSucc");
+								type + "Succ");
+							callback && callback(null, rtn);
 						} else {
 							popMsger.setupPopMsger(new popMsger(rtn.msg, "error", 20000), $('#msger'),
-								"addDaySaveFail");
+								type + "Fail");
+							callback && callback(rtn);
 						}
 					});
 				};
@@ -73,6 +75,7 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 				var notDriveCar = function (day) {
 					$scope.currentUserDay.cars = _.without($scope.currentUserDay.cars, $scope.currentUserCar[day]);
 
+					$("#" + day + "GotCar")[0].checked = false;
 					$("#" + day + "Car" + currentUserName).remove();
 				};
 
@@ -95,9 +98,11 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 								}
 							});
 
-							doSave && saveUserDay(userDay);
+							doSave && saveUserDay(userDay, "TakeCar");
 						}
 					});
+
+					$scope.currentUserTakeCar[day] = driver;
 				};
 
 				var removePassenger = function (day, driver) {
@@ -109,19 +114,23 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 								}
 							});
 
-							saveUserDay(userDay);
+							saveUserDay(userDay, "getOffCar");
 						}
 					});
 
 					$('#' + day + driver + currentUserName).remove();
+
+					delete($scope.currentUserTakeCar[day]);
 				};
 
 				var loadUserPlan = function () {
 					currentUserName = $rootScope.currentUser.name
 					$scope.nickName = $rootScope.currentUser.nickName;
+					$scope.currentUserDay = {};
+
 					$scope.currentUserAttend = {};
 					$scope.currentUserCar = {};
-					$scope.currentUserDay = {};
+					$scope.currentUserTakeCar = {};
 
 					$scope.weekdays = weekdays;
 					$scope.weekdaysStatistic = $.extend(true, {}, weekdaysStatistic);
@@ -148,6 +157,12 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 							userDay.cars.forEach(function (car) {
 								$scope.weekdaysStatistic[car.day].cars.push($.extend({}, car, {"driver": userDay.name}));
 
+								car.passengers.forEach(function (passenger){
+									if (passenger === currentUserName) {
+										$scope.currentUserTakeCar[car.day] = userDay.name;
+									}
+								});
+
 								if (userDay.name === currentUserName) {
 									$scope.currentUserCar[car.day] = car;
 								}
@@ -158,16 +173,18 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 					$scope.checkGo = function (weekday) {
 						// 1. 是否选中
 						// 2. 是否开车
-						// 3. 今天去的总人数
-						// 4. 车里面是否有乘客
+						// 3. 车里面是否有乘客
+						// 4. 是否乘坐别人的车
+						// 5. 今天去的总人数
 						var go = $('#' + weekday + 'Go')[0].checked;
 						var drive = $("#" + weekday + "GotCar")[0].checked;
 						var havePassenger = $scope.currentUserCar[weekday] && $scope.currentUserCar[weekday].passengers.length;
+						var takeCar = !$.isEmptyObject($scope.currentUserTakeCar);
 
 						if (go) {
 							attendDay(weekday);
 
-							saveUserDay($scope.currentUserDay);
+							saveUserDay($scope.currentUserDay, "addDay");
 						} else {
 							if (drive) {
 								if (drive && havePassenger) {
@@ -179,8 +196,15 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 							}
 
 							absentDay(weekday);
-							saveUserDay($scope.currentUserDay);
+							saveUserDay($scope.currentUserDay, "removeDay");
 						}
+
+						if ($scope.currentUserTakeCar[weekday]) {
+							removePassenger(weekday, $scope.currentUserTakeCar[weekday]);
+
+							delete($scope.currentUserTakeCar[weekday]);
+						}
+
 					};
 
 					$scope.gotCar = function (weekday) {
@@ -199,9 +223,15 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 
 						if (drive) {
 							driveCar(weekday);
-							saveUserDay($scope.currentUserDay);
+							saveUserDay($scope.currentUserDay, "addCar");
+
+							if ($scope.currentUserTakeCar[weekday]) {
+								removePassenger(weekday, $scope.currentUserTakeCar[weekday]);
+
+								delete($scope.currentUserTakeCar[weekday]);
+							}
 						} else {
-							if (drive && havePassenger) {
+							if (!drive && havePassenger) {
 								if (!confirm("已经有同事选择做您的车了，您不开车，取消的车位情况无法恢复，确定不开车了？")) {
 									$("#" + weekday + "GotCar")[0].checked = !$("#" + weekday + "GotCar")[0].checked;
 
@@ -210,15 +240,25 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 							}
 
 							notDriveCar(weekday);
-							saveUserDay($scope.currentUserDay);
+							saveUserDay($scope.currentUserDay, "removeCar");
 						}
 					};
 
 					$scope.getOnCar = function (day, driver) {
 						// 1. 添加人员
 						// 2. 添加数据
-						//$scope.weekdaysStatistic[car.day].cars.push($.extend({}, car, {"driver": userDay.name}));
+						if ($('#' + day + driver + currentUserName)[0]) {
+							alert ("已经上车啦，上上下下很爽么。");
+
+							return;
+						}
+
 						addPassenger(day, driver);
+
+						if (!$('#' + day + 'Go')[0].checked) {
+							$('#' + day + 'Go')[0].checked = true;
+							$scope.checkGo(day);
+						}
 					};
 
 					$scope.getOffCar = function (day, driver) {
