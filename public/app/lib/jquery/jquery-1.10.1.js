@@ -6255,7 +6255,6 @@
 			}
 
 			if ( l ) {
-				console.log(l);
 				fragment = jQuery.buildFragment( args, this[ 0 ].ownerDocument, false, !allowIntersection && this );
 				first = fragment.firstChild;
 
