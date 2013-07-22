@@ -21,6 +21,7 @@
 
 module.exports = [
 	// index
+	// get get index page
 	{
 		"url": ["/", "/vote"],
 		"path": "./lib/index/index.js",
@@ -37,7 +38,7 @@ module.exports = [
 	},
 	// user-days
 	// 1. get/get-xhr /user-days get all user-days
-	// 2. save/post-xhr /user-days save user days by user
+	// 2. post/post-xhr /user-days save user days by user
 	{
 		"url": ["/user-days"],
 		"path": "./lib/user-days/user-days-controller.js",
@@ -48,6 +49,21 @@ module.exports = [
 		"url": "/user-days",
 		"path": "./lib/user-days/user-days-controller.js",
 		"objName": "saveUserDays",
+		"method": "post"
+	},
+	// session
+	// 1. get/get-xhr /session get session
+	// 2. post/post-xhr /session set session
+	{
+		"url": "/session",
+		"path": "./lib/session/session-controller.js",
+		"objName": "getSession",
+		"method": "get"
+	},
+	{
+		"url": ["/session"],
+		"path": "./lib/session/session-controller.js",
+		"objName": "setSession",
 		"method": "post"
 	}
 ];

@@ -14,6 +14,12 @@ define(['angular', 'angularResource'], function (angular) {
 				save: {method: 'POST', isArray: false}
 			});
 		}])
+		.factory('session', ['$resource', function ($resource) {
+			return $resource('/session', {}, {
+				get: {method: 'GET', isArray: false},
+				save: {method: 'POST', isArray: false}
+			});
+		}])
 		.value('weekdays', [
 			{"name": "monday", "chinese": "星期一"},
 			{"name": "tuesday", "chinese": "星期二"},

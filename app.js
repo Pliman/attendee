@@ -15,6 +15,16 @@ app.set('view engine', 'jade');
 //app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
+app.use(express.cookieParser());
+app.use(express.session({
+	secret : "sdfhoisduahf9832hrnf9832hnroinsdfj89ajfdosajf990",
+	// set session timeout
+	cookie : {
+		path : '/',
+		httpOnly : true,
+		maxAge : 3600000
+	}
+}));
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
