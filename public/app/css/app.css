@@ -2,7 +2,7 @@
 body {
 	font-family: "georgia", "Lato", "sans-serif", "Microsoft YaHei";
 	font-size: 15px;
-	min-width: 1550px;
+	min-width: 1860px;
 }
 
 .navbar .nav > li > a {
@@ -89,10 +89,18 @@ body {
 	background-color: #9B59B6;
 }
 
+.voter .attendee {
+	float: left;
+	margin-top: -25px;
+	margin-left: 10px;
+	height: 70px;
+	width: 200px;
+}
+
 .voter .getInCar {
 	float: left;
 	margin-top: -25px;
-	margin-left: 20px;
+	margin-left: 10px;
 	height: 70px;
 	width: 260px;
 }
