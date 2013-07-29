@@ -15,8 +15,8 @@ module.exports = {
 		}
 	},
 	"mongoDB": {
-		//"host": "10.34.130.130",
-		"host": "10.34.135.159",
+		"host": "10.34.130.130",
+		//"host": "192.168.1.108",
 		"port": "27017",
 		"dbName": "attendee",
 		"max_connection": "10",
