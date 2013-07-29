@@ -41,6 +41,7 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 				};
 
 				var saveUserDay = function (userDay, type, callback) {
+					userDay.version += 1;
 					userDays.save({"userDays": userDay}, function (rtn) {
 						if (rtn.result === 'SUCCESS') {
 							popMsger.setupPopMsger(new popMsger(rtn.msg, "success", 5000), $('#msger'),
