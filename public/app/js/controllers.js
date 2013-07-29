@@ -221,9 +221,8 @@ define(['jQuery', 'underscore', 'angular', 'popMsger', 'angularUiRouter', './ser
 						var havePassenger = $scope.currentUserCar[weekday] && $scope.currentUserCar[weekday].passengers.length;
 
 						if (!go) {
-							alert("你切都不切，开啥子车喃？");
-							$("#" + weekday + "GotCar")[0].checked = false;
-							return false;
+							$('#' + weekday + 'Go')[0].checked = true;
+							$scope.checkGo(weekday);
 						}
 
 						if (drive) {
