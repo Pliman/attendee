@@ -5,6 +5,14 @@ body {
 	min-width: 1860px;
 }
 
+.mw-760 {
+	min-width: 760px;
+}
+
+.mw-1860 {
+	min-width: 1860px;
+}
+
 .navbar .nav > li > a {
 	font-size: 17px;
 }
