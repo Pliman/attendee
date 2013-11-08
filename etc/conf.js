@@ -23,6 +23,8 @@ module.exports = {
 		"host": "192.168.1.100",
 		"port": "27017",
 		"dbName": "attendee",
+		"userName": "attendee",
+		"password": "password",
 		"max_connection": "10",
 		// development or production
 		"mode": "production"
