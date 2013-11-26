@@ -20,7 +20,7 @@ module.exports = {
 	},
 	"mongoDB": {
 		//"host": "10.34.135.159",
-		"host": "192.168.1.100",
+		"host": "localhost",
 		"port": "27017",
 		"dbName": "attendee",
 		"userName": "attendee",
