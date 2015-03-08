@@ -2,6 +2,7 @@
 body {
 	font-family: "georgia", "Lato", "sans-serif", "Microsoft YaHei";
 	font-size: 15px;
+	background: url("../img/dark_bg.jpg") no-repeat left top;
 }
 
 .mw-760 {
@@ -9,15 +10,26 @@ body {
 }
 
 .mw-1860 {
-	min-width: 1860px;
+	min-width: 2650px;
 }
 
 .navbar .nav > li > a {
 	font-size: 17px;
 }
 
+.content {
+}
 /*-----------------global end-----------------*/
 /*-----------------header start-----------------*/
+.header .navbar-inner{
+	background: url("../img/football-banner.1png") no-repeat left top;
+	height: 200px;
+}
+
+.navbar{
+	margin-bottom: 0;
+}
+
 .navbar .siteTitle {
 	text-decoration: none;
 }
@@ -32,7 +44,8 @@ body {
 	cursor: pointer;
 	min-height: 60px;
 	line-height: 60px;
-	background-color: #ECF0F1;
+	color: #ECF0F1;
+	background-color: rgba(149, 165, 166, 0.4);
 }
 
 /*-----------------choose end-----------------*/
@@ -44,6 +57,7 @@ body {
 
 .chooser {
 	line-height: 24px;
+	color: #ECF0F1;
 }
 
 .voter div {
@@ -51,6 +65,7 @@ body {
 }
 
 .voter .title {
+	color: #ECF0F1;
 	font-size: 24px;
 	font-weight: 700;
 	padding-left: 50px;
@@ -66,8 +81,13 @@ body {
 	height: 60px;
 	line-height: 60px;
 	padding-top: 30px;
+	margin-bottom: 3px;
+	background-color: rgba(149, 165, 166, 0.4);
+	border: 1px solid #BDC3C7;
+	border-radius: 5px;
 }
 
+/*
 .voter .monday {
 	background-color: #E74C3C;
 }
@@ -95,6 +115,7 @@ body {
 .voter .sunday {
 	background-color: #9B59B6;
 }
+*/
 
 .voter .attendee {
 	float: left;
