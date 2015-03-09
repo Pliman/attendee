@@ -12,6 +12,7 @@ var require = {
 		popMsger: 'js/widgets/pop-msger',
 		Dialog: 'js/widgets/dialog'
 	},
+	waitSeconds: 60,
 	shim: {
 		bootstrap: {
 			deps: ['jQuery']
