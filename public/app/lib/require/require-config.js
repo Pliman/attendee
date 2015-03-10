@@ -5,6 +5,7 @@ var require = {
         underscore: '/lib/underscore/underscore',
         bootstrap: '/lib/bootstrap/bootstrap'
     },
+	waitSeconds: 60,
     shim: {
         bootstrap: {
             deps: ['jQuery']
