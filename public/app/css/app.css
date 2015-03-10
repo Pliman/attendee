@@ -20,7 +20,7 @@ body {
 /*-----------------global end-----------------*/
 /*-----------------header start-----------------*/
 .header .navbar-inner{
-	background: url("../img/football-banner.png") no-repeat left top;
+	background: url("../img/football-banner.jpg") no-repeat left top;
 	height: 200px;
 }
 
