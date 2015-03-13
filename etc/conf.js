@@ -3,7 +3,7 @@ module.exports = {
 		"rebuildDataTime": {
 			hour: 23,
 			minute: 50,
-			dayOfWeek: 6
+			dayOfWeek: 7
 		}
 	},
 	"logging": {
