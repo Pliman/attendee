@@ -2,7 +2,7 @@ module.exports = {
 	"application": {
 		"rebuildDataTime": {
 			hour: 16,
-			minute: 12,
+			minute: 13,
 			dayOfWeek: 2
 		}
 	},
